@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function funName(x, y, z){
+            console.log("x: " + x);
+            console.log("y: " + y);
+            console.log("z: " + z);
+            var result = x * y + z;
+    
+            return result;
+        }
+
+        var varResult = 0;
+
+        varResult = funName(2, 3, 4);
+        console.log("varResult : " + varResult);
+
+        varResult = funName(2, 3, 4, 5);
+        console.log("varResult: " + varResult);
+
+        varResult = funName(2, 3);
+        console.log("varResult: " + varResult);
+        //varResult : NaN  -> Not a Number
+        //z에 들어갈 값이 없어서 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

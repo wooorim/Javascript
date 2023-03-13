@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function funName(funCBF, funCBP, num) {
+            for (var i = 1; i <= 10; i++) {
+                console.log(num + "*" + i + "=" + (num * i));
+                if (i < 10){
+                funCBP(i); //콜백함수
+                }
+            }
+            funCBF();
+        };
+
+        function funCallBackProgress(n) {
+            console.log((n * 10) + "% 진행 완료!")
+        }
+        function funCallBackFinish() {
+            console.log("서버 작업 종료!");
+        };
+
+        funName(funCallBackFinish, funCallBackProgress, 7);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

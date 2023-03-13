@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function funName(){
+            console.log("명시(선억)적 함수의 기능을 실행합니다.")
+            return ("명시(선억)적 함수의 기능을 실행합니다."); //String타입으로 반환한다.
+        }
+        //함수 자체도 객체이기 때문에 변수에 들어감.
+        funName();
+
+        //익명 함수 생성
+        var funAnonymous = function(){
+            console.log("익명 함수의 기능을 실행합니다.")
+            return ("익병 함수의 기능을 실행합니다.")
+        }
+
+        funName(); 
+        funAnonymous();
+
+        console.log("funName함수 보기 : \n" + funName); //함수 내용
+        console.log("funName함수 실행 : \n" + funName()); //funName()를 불러오면 console안에 console이되기 때문에 오류(undefined)
+
+        console.log("funAnonymous함수 보기 : \n" + funAnonymous);
+        console.log("funAnonymous함수 실행 : \n" + funAnonymous());
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

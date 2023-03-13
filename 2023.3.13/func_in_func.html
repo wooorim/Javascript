@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function outFun(width, height){
+            console.log("triangle : " + triangle());
+            console.log("quadrangle : " + quadrangle());
+
+            //삼각형 면적 계산
+            function triangle(){
+                return (width * height) / 2;
+            }
+
+            //사각형 면적 계산
+            function quadrangle(){
+                return (width * height);
+            }
+        }
+
+        outFun(3, 5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
