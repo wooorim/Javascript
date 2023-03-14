@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function Grade(kor, eng, math){
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            this.getSum = function Sum(){
+                return (this.kor + this.eng + this.math);
+            }
+            this.getAvg = function Avg(){
+               return this.getSum() / 3.0 ;
+            }
+        }
+
+        const result = new Grade(20, 30, 40);
+        console.log("총점: " + result.getSum());
+        console.log("평균: " + result.getAvg());
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

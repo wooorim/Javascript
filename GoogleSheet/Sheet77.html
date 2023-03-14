@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var kor = prompt("국어 점수: ", "점수를 입력하세요.");
+        document.write("<h1>국어 점수: " + kor + "</h1>");
+        var eng = prompt("영어 점수: ", "점수를 입력하세요.");
+        document.write("<h1>영어 점수: " + eng + "</h1>");
+        var math = prompt("수학 점수: ", "점수를 입력하세요.");
+        document.write("<h1>수학 점수: " + math + "</h1>");
+
+        document.write("<h1>총점: " + (Number(kor) + Number(eng) + Number(math)) + "</h1>");
+        document.write("<h1>평균: " + (Number(kor) + Number(eng) + Number(math)/3)+ " </h1>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

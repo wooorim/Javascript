@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        var lottoArr = new Array(6);
+
+        for(var i = 1; i < lottoArr.length; i++){
+            lottoArr[i] = Math.floor(Math.random()* 45 + 1); //Math.floor은 소소점부터 밑을 잘라낸다.
+            //또는 Math.floor대신 parseInt도 가능
+
+            for(var j = 1; j < i; j++) {
+                if(lottoArr[i] == lottoArr[j]){
+                    i--;
+                }
+            }
+        }
+        for(var i = 1; i < lottoArr.length; i++){
+        console.log(lottoArr[i]);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
