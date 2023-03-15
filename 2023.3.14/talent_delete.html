@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        var objName = {
+            name : "Lee sun sin",
+            nation : "Korea",
+            gender : "men",
+            character : "good"
+        };
+
+        var print = "";
+        for(var key in objName){
+            print += key + ":" + objName[key] + "\n"
+        }
+        console.log(print);
+
+        objName.talent = "fencing";
+        print = "";
+        for(var key in objName){
+            print += key + ":" + objName[key] + "\n";
+        }
+        console.log(print);
+
+        delete(objName.talent);
+         //delete objName.talent;
+         print = "";
+         for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+         }
+         console.log(print);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

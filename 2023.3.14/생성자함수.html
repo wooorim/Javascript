@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 생성자 함수를 만드는 방법
+        function Stock(name, price) {
+            //원래는 return this; -> new하면 var Stock = {}; 객체가 만들어진다. 일반 함수의 성질을 잃어버림.
+            this.company = name; //각각의 상황에 따라 this가 가리키는 것이 달라진다. 속송 추가 시키는 기능 // 자기자신 객체에다 .을 통해 추가
+            this.price = price;
+        }
+        // 생성자 함수는 이름의 첫 글짜가 반드시 대문자. 
+
+        // 위의 생성자 함수를 new시키면 
+        // var Stock = {
+        //     company : name
+        //     price : price
+        // }
+
+
+        function Stock(name, price) { //하나의 생성자 함수로 여러개의 객체를 만들 수 있다.(제네릭 같은?)
+            this.company = name;
+            this.cost = price;
+            this.showPrice = function () {
+                console.log(this.cost);
+            }
+        }
+        var apple = new Stock("애플", 43750);
+        console.log(apple.company);
+        console.log(apple.cost);
+
+        var samsung = new Stock("삼성전자", 43750);
+        console.log(samsung.company);
+        console.log(samsung.cost);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

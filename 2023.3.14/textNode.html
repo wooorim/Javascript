@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //html은 위에서부터 순서대로 읽어서 메모리에 올림.
+        var elementNode = document.createElement("p");
+        var textNode = document.createTextNode("javascript & node.js");
+
+        elementNode.appendChild(textNode);
+        document.body.appendChild(elementNode); //body를 읽기 전이여서 body태그가 메모리에 안올간 상테. 출력 못함.
+        //onload객체를 선언해서 먼저 body태그를 메모리에 올리면, 출력 가능.
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

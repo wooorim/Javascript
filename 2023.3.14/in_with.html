@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        var objName = {
+            name : "Lee sun sin",
+            nation : "Korea",
+            gender : "men",
+            character : "good"
+        };
+
+        console.log("nation" in objName);
+        console.log("age" in objName);
+
+        with(objName){
+            console.log("name : " + name);
+            console.log("nation : " + nation);
+            console.log("gender : " + gender);
+            console.log("gender : " + gender);
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

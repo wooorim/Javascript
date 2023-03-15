@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        var clock = function getClock(){
+            
+        }
+        
+        setInterval(function(){
+            var today = new Date();
+            var hour = today.getHours();
+            var min = today.getMinutes();
+            var sec = today.getSeconds();
+
+            document.body.innerHTML = "<h1>" + String(hour) + ":" + String(min) + ":" + String(sec) + "</h1>";
+            // DOM객체, body안에 직접 html를 
+            document.write("<h1>" + hour + ":" + min + ":" + s + "</h1>");
+        }, 1000);
+    </script
+</head>
+<body>
+    
+</body>
+</html>

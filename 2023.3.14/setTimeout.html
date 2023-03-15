@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+        var timeoutId = setTimeout(function () {
+            alert("3초 후 한번 실행합니다.");
+        }, 3000); //함수 안에 함수 -> 콜백함수
+
+        // clearTimeout(timeoutId);
+
+        var intervalId = setInterval(function () {
+            console.log('2초마다 계속 실행됩니다.')
+        }, 2000);
+
+        var printTimeoutId = setTimeout(function(){ //7초 뒤에 function함수 실행. setInterval함수 내용을 중지.
+            clearInterval(printTimeoutId)
+            console.log('종료!')
+        }, 7000);
+
+        var printIntervalId = setInterval(function(){ //2초 마다 * 찍기
+            console.log("*")
+        }, 2000);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
