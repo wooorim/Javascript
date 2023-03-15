@@ -13,11 +13,19 @@
             this.kor = kor;
             this.eng = eng;
             this.math = math;
-            this.getSum = function(){
+            this.getSu  = function(){
                 var getSum = this.kor + this.eng + this.math;
-
+                return getSum;
+            }
+            this.getAvg = function(){
+                var getAvg = this.getSum() / 3;
+                return getAvg;
             }
         }
+
+        var woorim = new Grade(70, 80, 60);
+        console.log(woorim.getSum());
+        console.log(woorim.getAvg());
 
     </script>
 
