@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 에리어</title>
+
+    <script>
+        onload = function(){
+            function areaHandler(){
+            var count = document.getElementById("area-input").value.length;
+
+            document.getElementById("area-count").innerHTML = String(count);
+
+            if(count >= 30){
+                alert("메롱" + "30까지만 입력하세요.");
+                
+                return;
+            }
+
+            }
+            var objAscii = document.getElementById("area-input");
+            objAscii.addEventListener("keyup", areaHandler);
+        }
+
+
+    </script>
+</head>
+<body>
+    <textarea name="utext" id="area-input"></textarea>
+    <p>글자수 : <span id="area-count">65</span> / 200</p>
+</body>
+</html>

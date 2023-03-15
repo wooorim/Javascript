@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갯수 증감 버튼</title>
+
+    <script>
+        onload = function(){
+
+            
+            function numberAdd(){
+                let count = document.getElementById("number-input").value;
+                document.getElementById("number-input").value = Number(count) + 1;
+                
+            }
+            
+            function numberSub(){
+                let count = document.getElementById("number-input").value;
+                document.getElementById("number-input").value = Number(count) - 1;
+            }
+            
+            var add = document.getElementById("add-button");
+            add.addEventListener("mouseup", numberAdd);
+
+            var sub = document.getElementById("sub-button");
+            sub.addEventListener("mouseup", numberSub);
+
+
+        }
+    </script>
+</head>
+
+
+<body>
+    <h1>갯수</h1><input id="number-input" type="text">
+    <button id="add-button">+</button>
+    <button id="sub-button">-</button>
+</body>
+</html>

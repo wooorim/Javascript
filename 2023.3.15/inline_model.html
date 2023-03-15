@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>더블 클릭 이벤트</title>
+
+    <style>
+        #cEvent {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: #f00;
+           color: #fff;
+           font-weight: bolder;
+        }
+     </style>
+
+     <script>
+        function headerClick(){
+            console.log("click!");
+
+            //이벤트 제거
+            var ce = document.getElementById("cEvent");
+            console.log(ce);
+            ce.onclick = null;
+            ce.ondblclick = null;
+        }
+     </script>
+</head>
+<body>
+    <div id="cEvent" ondblclick="headerClick();"> <!-- 더블 클릭하면 콘솔 창에 click!출력 됨. -->
+        click event
+    </div>
+</body>
+</html>

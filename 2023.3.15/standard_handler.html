@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>표준 핸들러 모델</title>
+    <style>
+           #cEventAdd {
+            width: 200px; height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #f00;
+            color: #fff;
+            font-weight: bolder;
+         }
+         
+         #cEventRem {
+            width: 200px; height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #0f0;
+            color: #fff;
+            font-weight: bolder;
+         }
+    </style>
+
+    <script>
+         window.onload = function () { //<body>객체가 다 실행되고 나서 스크립트 함수 실행
+        function addHandler() {
+          console.log("click!!");
+        }
+
+        function removeHandler() {
+          console.log("event remove!!");
+          ceA.removeEventListener("click", addHandler);
+        }
+
+        var ceA = document.getElementById("cEventAdd"); 
+        ceA.addEventListener("click", function addHandle() { //"click"은 정해져있는 이벤트 명, addHandle()은 콜백함수
+          console.log("click!!");
+        });
+
+        var ceR = document.getElementById("cEventRem");
+        ceR.addEventListener("click", removeHandler);
+      };
+
+    </script>
+</head>
+<body>
+    <div id="cEventAdd">
+        click event
+    </div>
+    <div id="cEventRem">
+        remove event
+    </div>
+</body>
+</html>

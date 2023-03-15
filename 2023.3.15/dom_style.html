@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style속성 적용</title>
+
+    <script>
+        onload = function(){
+            var str = "";
+            str += "<p id = 'jsTitle'> javascript & node.js </p>";
+            str += "<img id = 'logoImg', src='./img/logo.png',";
+
+            document.body.innerHTML = str;
+
+            var titleNode = document.getElementById("jsTitle");
+            titleNode.style.fontSize = "1.2em";
+            titleNode.style.border = "1px solid #ff0000";
+
+            var logoNode = document.getElementById("logoImg");
+            logoNode.style.width = "170";        
+            logoNode.style.height = "67px";
+        }
+
+    // 웹 브라우저가 가장 효율적인 방법으로 img를 보여준다.
+    // 지금은 스레드로 돌리고있어서 메모리에 올라가 있지만 처리에 시간이 걸려 보여지지 않는다.(비동기 = 스레드)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>m

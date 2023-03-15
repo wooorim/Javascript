@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #objDiv {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: #f00;
+           color: #fff;
+           font-weight: bolder;
+        }
+        
+        #objPar {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: #0f0;
+           color: #fff;
+           font-weight: bolder;
+        }
+        #divEvent {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: rgb(213, 147, 252);
+           color: #fff;
+           font-weight: bolder;
+        }
+     </style>
+
+     <script>
+        onload = function(){
+            function addHandler(){
+                console.log("click!")
+                console.log("this: " + this);
+
+               this.style.backgroundColor = "#0000ff";
+
+            };
+
+            function divHandler(event){ //이벤트 객체 -> 웹 브라우저가 제공하는 객체, 파라미터 이름은 자유지정(일반적으로 e, event), 사용유무는 개발자의 자유
+                console.log("divHandler!")
+                console.log("this: " + this);
+                console.log(event); //웹 브라우저가 제공하는 이벤트 객체의 정보를 콘솔 창에서 보여줌.
+
+               this.style.backgroundColor = "#000000";
+
+            }
+
+            var objD = document.getElementById("objDiv");
+            objD.addEventListener("click", addHandler);
+         
+            var objP = document.getElementById("objPar");
+            objP.addEventListener("click", addHandler);
+
+            var obDiv = document.getElementById("divEvent");
+            obDiv.addEventListener("click", divHandler);
+            
+            //이벤트를 등록했을 떄 이벤트 객체 불러옴. ex)"click"
+
+        }
+     </script>
+</head>
+<body>
+    <div id="objDiv">Object Division</div>
+    <p id="objPar">Object Paragraph</p>
+    <div id="divEvent">Object Division</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        onload = function () {
+            var sbmBtn = document.getElementById("sbmBtn");
+            sbmBtn.onclick = function () {
+                if (document.getElementById("uId").value == "") {
+                    alert("user id blank!!");
+                } else if (document.getElementById("uPw").value == "") {
+                    alert("user pw blank!!");
+                } else {
+                    alert("login success!");
+                    document.getElementById("loginForm").submit();
+                }
+            };
+
+            var resBtn = document.getElementById("resBtn");
+            resBtn.onclick = function () {
+                alert("reset ok!");
+                document.getElementById("loginForm").reset;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <form id="loginForm" action="http://google.com">
+        USER ID : <input id="uId" type="text" name="uid" /><br>
+        USER PW : <input id="uPw" type="password" name="upw" /><br>
+        <input type="button" id="sbmBtn" value="SUBMIT" />
+        <input type="button" id="resBtn" value="RESET" />
+    </form>
+</body>
+
+</html>
