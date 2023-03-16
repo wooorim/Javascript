@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>appendTo객체</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var wrapObj = $("#wrap");
+
+            var divObj = $("<div> Hello jQuery! </div>");
+            divObj.appendTo(wrapObj);
+
+            divObj.css("background", "#0000ff");
+
+            $("<div> Hello jQuery! </div>")
+            .appendTo($("#wrap"))
+            .css("background", "#ff0000");
+
+           // $("div") <>가 없는 것이 선택자
+           // $("<div>") <>가 있으면 태그 객체 생성
+
+            $("<div> 홍길동 </div>")
+            .appendTo($("#wrap"))
+            .css("background", "yellow");
+
+            //<a>객체 생성 및 추가
+            var aObj = $("<a href = 'https://www.google.com'>google </a><br>" );
+            aObj = appendTo(wrapObj);
+
+            var imgObj = $("<img src=''")
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+</html>

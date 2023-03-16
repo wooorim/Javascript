@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 삽입</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var wrapObj = $("#wrap");
+
+        //객체 생성
+        var divObj = $("<div> Hello jQuery </div>");
+    
+        divObj.appendTo(wrapObj); //.appendTo()
+    
+        //부모객체가 자식 집어넣기
+        wrapObj.append(divObj); //.append()
+
+         //첫번째 자식으로 집어 넣기
+        divObj.prependTo(wrapObj);
+        wrapObj.prepend(divObj);
+
+        //동등 형제로서 막내로 들어가겠다
+        divObj.insertAfter(wrapObj); //.insertAfter() div태그 wrap을 벗어나고 바로 추가 
+        wrapObj.after(divObj); //.after()
+
+
+    })
+
+</script>
+<body>
+    <div id="wrap">
+        <div>contents</div>
+    </div>
+</body>
+</html>

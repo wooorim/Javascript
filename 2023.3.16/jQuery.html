@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            //jQuery와 $ 둘 다 같은 의미
+            jQuery("p").css("height", "300px");
+            $("p").css("width", "500px");
+            $("p").css("border", "1px solid #cccccc");
+            $("p").css("color", "red");
+
+            var myJQ = jQuery("p"); //jQuey("p")가 담겨졌기 때문애 myJQ는 jQuery객체다 된다.
+            console.log(myJQ);
+
+            var elementP = document.getElementsByTagName("p");
+            console.log(elementP);
+            //myJQ와 elementP은 동일한 객체가 아니다. 데이터 타입 자체가 다르다.
+            //myJQ는 jQuery클래스로 객체가 생성되는 것이고, elementP는 element클래스(자바스크립트 클래스)오 객체가 생성되는 것이다.
+
+            myJQ.css("textDecoration", "underLine");        
+            myJQ.css("width", "300px").css("border", "1px solid #ff0000");
+
+            $("p")
+            .css("fontSize", "2em")
+            .css("height", "300px")
+            .css("lineHeight", "300px")
+            .css("textAlign", "center");
+        };
+
+    </script>
+
+</head>
+
+<body>
+    <p>Hello jQuery!</p>
+</body>
+
+</html>

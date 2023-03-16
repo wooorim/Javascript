@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>each함수</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //each = 배열
+            $("p").each(function (index, item) { //콜백함수, each = for문기능,  파라미터 내용 자세히 = (index=0, var item = "<p> Hello javascript! </p>")
+                console.log($(item).text() + "index" + index); //text() = p태그 안의 텍스트를 꺼낸다.
+                // console.log($(this).text());            //item == this
+                if (index % 2 == 0) {
+                    $(item).css("background", "blue");
+                    // $(this).css("background", "#dfdfdf");   //item == this 호출하는 놈
+                } else {
+                    $(item).css("background", "#cccccc");
+                    // $(this).css("background", "#cccccc");   //item == this
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p> Hello javascript! </p>
+    <p> Hello jQuery! </p>
+    <p> Hello node.js! </p>
+
+    <div id="htmlMethod"> html() 메서드 </div>
+    <div id="textMethod"> text() 메서드 </div>
+
+    <div id="addClass"> addClass() 메서드 </div>
+    <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+
+    <div id="attrMethod">
+        <img>
+        <br>
+        <img>
+    </div>
+
+    <div id="cssMethod"> CSS METHOD </div>
+
+    <div id="removeMthod"> Remove Object! </div>
+    <div id="emptyMthod"> Empty Object! </div>
+</body>
+
+</html>
