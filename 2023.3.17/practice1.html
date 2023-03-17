@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>+ 연산</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#result-button").click(function(){
+                var result = Number($("#num1").val()) + Number($("#num2").val());
+
+                $("#sum").html(result);
+             });
+        })
+    </script>
+</head>
+<body>
+    <h1>+연산</h1>
+    <input id="num1" type="number" value="0"> +
+    <input id="num2" type="number" value="0">
+    <button id="result-button">연산</button>
+    <p><h1>합계: <span id="sum">0</span></h1></p>
+</body>
+</html>

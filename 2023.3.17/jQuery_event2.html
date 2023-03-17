@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () { //jQuery를 사용한다는 명령어 !필요!
+
+            $("#eDiv").dblclick(function () {
+                console.log("dblclick event!");
+            });
+
+            $("#eDiv").mousedown(function () {
+                console.log("mousedown event!");
+            });
+
+            $("#eDiv").mouseup(function () {
+                console.log("mouseup event!");
+            });
+
+            $("#eDiv").mousemove(function () {
+                console.log("mousemove event!");
+            });
+
+            $("#eDiv").mouseover(function () {
+                console.log("mouseover event!");
+            });
+
+            $("#eDiv").mouseout(function () {
+                console.log("mouseout event!");
+            });
+
+            $("#eDiv").mouseenter(function () {
+                console.log("mouseenter event!");
+            });
+
+            $("#eDiv").mouseleave(function () {
+                console.log("mouseleave event!");
+            });
+
+            //    요소 복제
+            //    $("#eDiv").click(function () {
+            //         ($("#eDiv").clone(this)).appendTo($("body")); //clone(this)어느 박스를 클릭해도 증가
+            //     });
+
+        });
+
+        // 모든 객체(태그, 요소)를 컨트롤(접근) 할 수 있는 DOM(html태그를 컨트롤 가능한 상위)객체
+        $(document).ready(function () {
+            $(document).on("click", "#eDiv", function () { //on 클릭 이벤트
+                $("body").append($(this).clone());
+            })
+        })
+    </script>
+    <style>
+        #eDiv {
+            width: 100px;
+            height: 100px; 
+            background: #ff0000;
+            line-height: 100px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: bolder;
+            margin: 20px;
+            /* 요소를 가로로 출력 */
+            display: inline-block;
+            /* float: left; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="eDiv"> jQuery Event </div>
+</body>
+
+</html>

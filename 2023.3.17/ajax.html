@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({ //객체 백엔드에서 받은 정보를 풀어주는 ajax()
+                type: "get",
+                url: "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",
+                success: function (data) {
+                    // 통신 성공
+                    console.log("통신 성공")
+                    console.log(data);
+                    console.log(data.squadName);
+
+
+                    // .name 에다 index의 members객체를 가져온다
+                    // tr태그를 새로 삽입 그 안에 새로 td 삽입
+
+                    $(data.members).each(function (index, members) { //member객체를 돈다
+                      
+                        let addTr = $("<tr></tr>").appendTo("table");
+                        let name = $(addTr).append("<td>" + members.name + "</td>");
+                        $(addTr).append("<td>" + members.age + "</td>");
+
+                    })
+
+
+
+                }
+
+
+            });
+        })
+    </script>
+</head>
+<table border="1">
+    <tr>
+        <td>이름</td>
+        <td>나이</td>
+    </tr>
+</table>
+
+<body>
+
+</body>
+
+</html>

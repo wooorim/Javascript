@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function eventHandler(event) {
+                console.log("click!");
+                console.log("this: " + this);
+
+
+                // for(var key in event){
+                //     console.log(key + ":" + event[key]);
+                // }
+            }
+
+            $("#objDiv").click(eventHandler);
+            $("#objPar").click(eventHandler);
+        })
+    </script>
+</head>
+<body>
+    <div id="objDiv">Object Division</div>
+    <p id="objPar">Object Paragraph</p>
+</body>
+</html>

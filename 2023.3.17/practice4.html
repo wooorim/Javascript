@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>리스트 추가</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#addBtn").click(function () {
+                let inputText = $("#list-add").val();
+                if(inputText == ""){
+                    return; //입력이 없는데 추가버튼을 눌렀을 떄는 추가시키지 않음.
+                }
+                let listText = $("<h2><li>" + inputText + "</li></h2>");
+                $("#list").append(listText);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>리스트 추가</h1>
+    <input id="list-add" type="text">
+    <button id="addBtn">추가</button>
+    <ul id="list">
+    </ul>
+</body>
+
+</html>

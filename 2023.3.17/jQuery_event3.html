@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 폼 태그</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("sbmBtn").click(function () {
+
+                if ($("uId").val() == "") { //내용이 없을 때의 조건을 걸 때, null은 불가. value태그 안에 null을 넣으면 초기화가 안된다.
+                    alert("user id blank!!");
+                } else if ($("#uPw").val() == "") {
+                    alert("user pw blank!!");
+                } else {
+                    alert("login ok!!");
+                    $("#loginForm").submit();
+                }
+
+            });
+
+            $("#resBtn").click(function () {
+                alert("reset ok!!");
+                $("#loginForm")[0].reset();//추천 안하는 방식 form태그에서 reset버튼 누르면 내용 사라짐.
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <form id="loginForm" action="http://www.google.com"> <!-- <form> 동작 태그/submit->google사이트에 정보가 전송 된다.-->
+        USER ID : <input id="uId" type="text" name="uId"><br>
+        USER PW : <input id="uPw" type="password" name="upw"><br>
+        <input id="sbmBtn" type="button" value="SUBMIT">
+        <input id="resBtn" type="button" value="RESET">
+    </form>
+</body>
+
+</html>

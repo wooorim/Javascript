@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>총합 구하기2(선택된 값만)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#button").click(function () {
+                let totalPrice = 0; //외부 변수 살아있다 = 클로저
+                let check = $("input:checkbox:checked");
+
+                //방법1
+                $(check).each(function (index, item) {
+                    totalPrice += Number($(check[index]).val()); //check[index].value도가능 (자바스크립트)
+                })
+
+                //방법2
+                $(check).each(function () {
+                    totalPrice += Number($(this.val()));
+                })
+                $("#sumPrice").html(totalPrice);
+
+            })
+        })
+    </script>
+
+</head>
+
+
+<body>
+    <h1>총합 구하기</h1>
+    <ul>
+        <li>바나나(1000원) <input name="fruit" type="checkbox" class="fruit" value="1000"></li>
+        <!-- 같은 그룹을 표현할 때는 name을 같은 이름으로 해주는것이 좋다 -->
+        <li>사과(500원) <input name="fruit" type="checkbox" class="fruit" value="500"></li>
+        <li>배(1500원) <input name="fruit" type="checkbox" class="fruit" value="1500"></li>
+    </ul>
+    <button id="button">총합 구하기</button>
+    <div id="sumPrice">선택한 총가격 : </div>
+
+</body>
+
+</html>

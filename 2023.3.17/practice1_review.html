@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>+ 연산 (선생님)</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#result-button").click(function(){
+                var v1 = Number($("#num1").val());
+                var v2 = Number($("#num2").val());
+                var result = v1 + v2;
+
+                $("#sum").val(result);
+
+             });
+        })
+    </script>
+</head>
+<body>
+    <h1>+연산</h1>
+    <input id="num1" type="number" value="0"> +
+    <input id="num2" type="number" value="0"> =
+    <input id="sum" type="number" value="0">
+    <button id="result-button">합계</button>
+</body>
+</html>

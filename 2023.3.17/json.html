@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var person = { 
+         "employees": [ //객체 배열 형태
+           {
+            "name": "Surim", //key쪽에 " "을 붙이면 JSON, 안 붙이면 Javascript
+            "lastName": "Son"
+           },
+           {
+            "name": "Someone",
+            "lastName": "Huh"
+           },
+           {
+            "name": "Someone else",
+            "lastName": "Kim"
+           } 
+         ]
+        };
+        console.log(person.employees[0].name); //배열 0번째 name값
+
+        //json은 프론트와 백엔드가 데이터를 주고 받을 때의 표준 형식 
+
+        var person2 = {
+        employees: [
+          {
+            name: "Surim", //Javascript의 객체 형식(key "" 없음)
+            lastName: "Son",
+          },
+          {
+            name: "Someone",
+            lastName: "Huh",
+          },
+          {
+            name: "Someone else",
+            lastName: "Kim",
+          },
+        ],
+      };
+
+      console.log(person.employees[0].name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
