@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+</head>
+
+<style>
+    .flex-container{
+        background-color: dodgerblue;
+        display: flex;
+        flex-direction: row; /* flex-direction가 가장 기본 속성, row(default) = 가로정렬 column = 세로정렬 */
+        /* flex-wrap: wrap;  반응형 적용*/
+        /* justify-content: space-between; justify-content는 가로축을 기준으로 정렬, flex-start(default) =  left에 정렬 center = 중앙 flex-end = right에 정렬 */
+        align-items: stretch; /* item의 범위에서 세로로 중앙 정렬, align은 세로축을 기준으로 정렬 */
+        justify-content: center;
+        height: 200px;
+        
+    }
+
+    .flex-container  div {
+        background-color: #f1f1f1;
+        width: 70px;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <!-- <div>2</div>
+        <div>3</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript"> //선언안하면 default값으로 javascript로 설정된다.
+        $(document).ready(function () {
+            $.ajax({ //jQuery가 제공하는 함수 비동기통신. ()안에는 객체가 들어간다. 
+                type: "GET", //기본적으로 대문자
+                url: 'http://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10',
+                success: function (result) {
+                    console.log(result);
+
+                    var htmls = ""; //html을 초기화
+                    $("#list-table").html("");
+
+                    $("<tr>", {
+                        html: "<td>" + "번호" + "</td>" +  // 컬럼명들
+                            "<td>" + "이름" + "</td>" +
+                            "<td>" + "전화번호" + "</td>" +
+                            "<td>" + "주소" + "</td>" +
+                            "<td>" + "사진" + "</td>" +
+                            "<td>" + "삭제" + "</td>"
+                    }).appendTo("#list-table") //위의 html요소를 하나하나 appendTo한다.
+
+                    $(result.contacts).each(function () {
+
+                        htmls += '<tr>';
+                        htmls += '<td>' + this.no + '</td>';
+                        htmls += '<td>' + this.name + '</td>';
+                        htmls += '<td>' + this.tel + '</td>';
+                        htmls += '<td>' + this.address + '</td>';
+                        htmls += '<td>' + '<img src=' + this.photo + ' />' + '</td>';
+                        htmls += '<td>' + "<input type='button' class='del-button' id=" + this.no + ' value="삭제" />' + '</td>';
+                        htmls += '</tr>';
+                    });
+
+                    $("#list-table").append(htmls);
+
+                }
+
+            });
+        });
+    </script>
+
+    <script>//삭제 script
+        $(document).on("click", ".del-button", function () {
+            console.log(this);
+            $(this).parent().parent().remove();
+        });
+    </script>
+
+</head>
+
+<body>
+    <table id="list-table" width="500" border="1"></table>
+</body>
+
+</html>
